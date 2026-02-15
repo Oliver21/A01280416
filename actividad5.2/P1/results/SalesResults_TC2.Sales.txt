@@ -1,4 +1,235 @@
+Rustic breakfast 
+ Unit Price: $21.32 
+ Quantity: 200 
+ Total: $4264.0 
+
+Sandwich with salad 
+ Unit Price: $22.48 
+ Quantity: 23 
+ Total: $517.04 
+
+Raw legums 
+ Unit Price: $17.11 
+ Quantity: 11 
+ Total: $188.20999999999998 
+
+Fresh stawberry 
+ Unit Price: $28.59 
+ Quantity: 221 
+ Total: $6318.39 
+
+Raw legums 
+ Unit Price: $17.11 
+ Quantity: 2 
+ Total: $34.22 
+
+Green smoothie 
+ Unit Price: $17.68 
+ Quantity: 400 
+ Total: $7072.0 
+
+Cuban sandwiche 
+ Unit Price: $18.5 
+ Quantity: 2 
+ Total: $37.0 
+
+Hazelnut in black ceramic bowl 
+ Unit Price: $27.35 
+ Quantity: 2 
+ Total: $54.7 
+
+Tomatoes 
+ Unit Price: $26.03 
+ Quantity: 1 
+ Total: $26.03 
+
+Plums 
+ Unit Price: $19.18 
+ Quantity: 250 
+ Total: $4795.0 
+
+Fresh blueberries 
+ Unit Price: $21.01 
+ Quantity: 334 
+ Total: $7017.34 
+
+Green smoothie 
+ Unit Price: $17.68 
+ Quantity: 300 
+ Total: $5304.0 
+
+Corn 
+ Unit Price: $13.55 
+ Quantity: 68 
+ Total: $921.4000000000001 
+
+French fries 
+ Unit Price: $18.32 
+ Quantity: 33 
+ Total: $604.5600000000001 
+
+Ground beef meat burger 
+ Unit Price: $11.73 
+ Quantity: 78 
+ Total: $914.94 
+
+Hazelnut in black ceramic bowl 
+ Unit Price: $27.35 
+ Quantity: 2 
+ Total: $54.7 
+
+Sweet fresh stawberry 
+ Unit Price: $29.45 
+ Quantity: 87 
+ Total: $2562.15 
+
+Homemade bread 
+ Unit Price: $17.48 
+ Quantity: 1 
+ Total: $17.48 
+
+Smoothie with chia seeds 
+ Unit Price: $25.26 
+ Quantity: 46 
+ Total: $1161.96 
+
+Corn 
+ Unit Price: $13.55 
+ Quantity: 1 
+ Total: $13.55 
+
+Plums 
+ Unit Price: $19.18 
+ Quantity: 2 
+ Total: $38.36 
+
+Fresh blueberries 
+ Unit Price: $21.01 
+ Quantity: 46 
+ Total: $966.46 
+
+Green smoothie 
+ Unit Price: $17.68 
+ Quantity: 1 
+ Total: $17.68 
+
+Corn 
+ Unit Price: $13.55 
+ Quantity: 2 
+ Total: $27.1 
+
+French fries 
+ Unit Price: $18.32 
+ Quantity: 4 
+ Total: $73.28 
+
+Ground beef meat burger 
+ Unit Price: $11.73 
+ Quantity: 64 
+ Total: $750.72 
+
+Hazelnut in black ceramic bowl 
+ Unit Price: $27.35 
+ Quantity: 2 
+ Total: $54.7 
+
+Sweet fresh stawberry 
+ Unit Price: $29.45 
+ Quantity: 3 
+ Total: $88.35 
+
+Homemade bread 
+ Unit Price: $17.48 
+ Quantity: 456 
+ Total: $7970.88 
+
+Smoothie with chia seeds 
+ Unit Price: $25.26 
+ Quantity: 2 
+ Total: $50.52 
+
+Corn 
+ Unit Price: $13.55 
+ Quantity: 5 
+ Total: $67.75 
+
+Plums 
+ Unit Price: $19.18 
+ Quantity: 645 
+ Total: $12371.1 
+
+Fresh blueberries 
+ Unit Price: $21.01 
+ Quantity: -35 
+ Total: $-735.35 
+
+Green smoothie 
+ Unit Price: $17.68 
+ Quantity: 2 
+ Total: $35.36 
+
+Corn 
+ Unit Price: $13.55 
+ Quantity: 465 
+ Total: $6300.75 
+
+French fries 
+ Unit Price: $18.32 
+ Quantity: 20 
+ Total: $366.4 
+
+Ground beef meat burger 
+ Unit Price: $11.73 
+ Quantity: 4 
+ Total: $46.92 
+
+Hazelnut in black ceramic bowl 
+ Unit Price: $27.35 
+ Quantity: 1 
+ Total: $27.35 
+
+Sweet fresh stawberry 
+ Unit Price: $29.45 
+ Quantity: 131 
+ Total: $3857.95 
+
+Homemade bread 
+ Unit Price: $17.48 
+ Quantity: 9 
+ Total: $157.32 
+
+Smoothie with chia seeds 
+ Unit Price: $25.26 
+ Quantity: 13 
+ Total: $328.38 
+
+Corn 
+ Unit Price: $13.55 
+ Quantity: 678 
+ Total: $9186.9 
+
+Plums 
+ Unit Price: $19.18 
+ Quantity: 334 
+ Total: $6406.12 
+
+Fresh blueberries 
+ Unit Price: $21.01 
+ Quantity: 3445 
+ Total: $72379.45000000001 
+
+Green smoothie 
+ Unit Price: $17.68 
+ Quantity: -123 
+ Total: $-2174.64 
+
+Corn 
+ Unit Price: $13.55 
+ Quantity: 445 
+ Total: $6029.75 
+
 -----------------------
 Total Sales: $166,568.23
 -----------------------
 
+Execution Time: 0.000709 seconds

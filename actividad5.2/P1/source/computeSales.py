@@ -25,6 +25,8 @@ def main():
     print("Catalogue file: ", file_name_catalogue)
     print("Sales file: ", file_name_sales)
     print("Reading files...")
+    print("-------------------\n")
+    start_time = time.perf_counter()
 
     #leer el catálogo de productos
     with open (filepath_catalogue, 'r', encoding="utf-8") as file:
@@ -43,13 +45,17 @@ def main():
         quantity = sale['Quantity']
         for product in data:
             if product['title'] == product_sale:
+                lines.append(f"{product_sale} \n Unit Price: ${product['price']} \n Quantity: {quantity} \n Total: ${product['price'] * quantity} \n")
                 total_sales += product['price'] * quantity
 
+    end_time = time.perf_counter()
+    elapsed_time = end_time - start_time
 
 
     lines.append("-----------------------")
     lines.append(f"Total Sales: ${total_sales:,.2f}")
     lines.append("-----------------------\n")
+    lines.append(f"Execution Time: {elapsed_time:.6f} seconds")
 
     #Definir el nombre del archivo de resultados
     archivo_salida = '../results/SalesResults_' + file_name_sales.replace('.json', '.txt')

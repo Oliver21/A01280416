@@ -30,11 +30,14 @@ def main():
 
     #leer el catálogo de productos
     with open (filepath_catalogue, 'r', encoding="utf-8") as file:
-        data = json.load(file)
+        catalogue = json.load(file)
 
     #leer las ventas
     with open (filepath_sales, 'r', encoding="utf-8") as file:
         sales = json.load(file)
+
+    #Creamos un diccionario con la información del catálogo para facilitar la búsqueda de precios
+    catalogue_dict = {product['title']: product['price'] for product in catalogue}
     
 
     #Recorrer las ventas y calcular el total de ventas
@@ -43,10 +46,13 @@ def main():
     for sale in sales:
         product_sale = sale['Product']
         quantity = sale['Quantity']
-        for product in data:
-            if product['title'] == product_sale:
-                lines.append(f"{product_sale} \n Unit Price: ${product['price']} \n Quantity: {quantity} \n Total: ${product['price'] * quantity} \n")
-                total_sales += product['price'] * quantity
+
+        if product_sale in catalogue_dict:
+            total_sales += catalogue_dict[product_sale] * quantity
+            lines.append(f"{product_sale} \n Unit Price: ${catalogue_dict[product_sale]} \n Quantity: {quantity} \n Total: ${catalogue_dict[product_sale] * quantity} \n")
+        else:
+            lines.append(f"{product_sale} \n Unit Price: PRODUCT NOT FOUND IN CATALOGUE \n Quantity: {quantity} \n Total: NOT CALCULATED \n")
+                
 
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time

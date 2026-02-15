@@ -232,4 +232,4 @@ Corn
 Total Sales: $166,568.23
 -----------------------
 
-Execution Time: 0.000709 seconds
+Execution Time: 0.001178 seconds

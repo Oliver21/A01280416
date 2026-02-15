@@ -103,6 +103,11 @@ Plums
  Quantity: 2 
  Total: $38.36 
 
+Elotes 
+ Unit Price: PRODUCT NOT FOUND IN CATALOGUE 
+ Quantity: 100 
+ Total: NOT CALCULATED 
+
 Green smoothie 
  Unit Price: $17.68 
  Quantity: 1 
@@ -168,6 +173,11 @@ Corn
  Quantity: 465 
  Total: $6300.75 
 
+Frijoles 
+ Unit Price: PRODUCT NOT FOUND IN CATALOGUE 
+ Quantity: 100 
+ Total: NOT CALCULATED 
+
 Ground beef meat burger 
  Unit Price: $11.73 
  Quantity: 4 
@@ -222,4 +232,4 @@ Corn
 Total Sales: $165,235.37
 -----------------------
 
-Execution Time: 0.000670 seconds
+Execution Time: 0.000659 seconds

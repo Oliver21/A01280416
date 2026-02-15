@@ -1,235 +1,235 @@
-Rustic breakfast 
- Unit Price: $21.32 
- Quantity: 1 
- Total: $21.32 
+Rustic breakfast
+Unit Price: $21.32
+Quantity: 1
+Total: $21.32
 
-Sandwich with salad 
- Unit Price: $22.48 
- Quantity: 2 
- Total: $44.96 
+Sandwich with salad
+Unit Price: $22.48
+Quantity: 2
+Total: $44.96
 
-Raw legums 
- Unit Price: $17.11 
- Quantity: 1 
- Total: $17.11 
+Raw legums
+Unit Price: $17.11
+Quantity: 1
+Total: $17.11
 
-Fresh stawberry 
- Unit Price: $28.59 
- Quantity: 1 
- Total: $28.59 
+Fresh stawberry
+Unit Price: $28.59
+Quantity: 1
+Total: $28.59
 
-Pears juice 
- Unit Price: $19.49 
- Quantity: 2 
- Total: $38.98 
+Pears juice
+Unit Price: $19.49
+Quantity: 2
+Total: $38.98
 
-Green smoothie 
- Unit Price: $17.68 
- Quantity: 3 
- Total: $53.04 
+Green smoothie
+Unit Price: $17.68
+Quantity: 3
+Total: $53.04
 
-Cuban sandwiche 
- Unit Price: $18.5 
- Quantity: 2 
- Total: $37.0 
+Cuban sandwiche
+Unit Price: $18.5
+Quantity: 2
+Total: $37.0
 
-Hazelnut in black ceramic bowl 
- Unit Price: $27.35 
- Quantity: 2 
- Total: $54.7 
+Hazelnut in black ceramic bowl
+Unit Price: $27.35
+Quantity: 2
+Total: $54.7
 
-Tomatoes 
- Unit Price: $26.03 
- Quantity: 1 
- Total: $26.03 
+Tomatoes
+Unit Price: $26.03
+Quantity: 1
+Total: $26.03
 
-Plums 
- Unit Price: $19.18 
- Quantity: 1 
- Total: $19.18 
+Plums
+Unit Price: $19.18
+Quantity: 1
+Total: $19.18
 
-Fresh blueberries 
- Unit Price: $21.01 
- Quantity: 2 
- Total: $42.02 
+Fresh blueberries
+Unit Price: $21.01
+Quantity: 2
+Total: $42.02
 
-Green smoothie 
- Unit Price: $17.68 
- Quantity: 2 
- Total: $35.36 
+Green smoothie
+Unit Price: $17.68
+Quantity: 2
+Total: $35.36
 
-Corn 
- Unit Price: $13.55 
- Quantity: 3 
- Total: $40.650000000000006 
+Corn
+Unit Price: $13.55
+Quantity: 3
+Total: $40.650000000000006
 
-French fries 
- Unit Price: $18.32 
- Quantity: 1 
- Total: $18.32 
+French fries
+Unit Price: $18.32
+Quantity: 1
+Total: $18.32
 
-Ground beef meat burger 
- Unit Price: $11.73 
- Quantity: 1 
- Total: $11.73 
+Ground beef meat burger
+Unit Price: $11.73
+Quantity: 1
+Total: $11.73
 
-Hazelnut in black ceramic bowl 
- Unit Price: $27.35 
- Quantity: 2 
- Total: $54.7 
+Hazelnut in black ceramic bowl
+Unit Price: $27.35
+Quantity: 2
+Total: $54.7
 
-Cherry 
- Unit Price: $14.35 
- Quantity: 2 
- Total: $28.7 
+Cherry
+Unit Price: $14.35
+Quantity: 2
+Total: $28.7
 
-Homemade bread 
- Unit Price: $17.48 
- Quantity: 1 
- Total: $17.48 
+Homemade bread
+Unit Price: $17.48
+Quantity: 1
+Total: $17.48
 
-Smoothie with chia seeds 
- Unit Price: $25.26 
- Quantity: 1 
- Total: $25.26 
+Smoothie with chia seeds
+Unit Price: $25.26
+Quantity: 1
+Total: $25.26
 
-Corn 
- Unit Price: $13.55 
- Quantity: 1 
- Total: $13.55 
+Corn
+Unit Price: $13.55
+Quantity: 1
+Total: $13.55
 
-Peaches on branch 
- Unit Price: $25.62 
- Quantity: 2 
- Total: $51.24 
+Peaches on branch
+Unit Price: $25.62
+Quantity: 2
+Total: $51.24
 
-Pesto with basil 
- Unit Price: $18.19 
- Quantity: 2 
- Total: $36.38 
+Pesto with basil
+Unit Price: $18.19
+Quantity: 2
+Total: $36.38
 
-Plums 
- Unit Price: $19.18 
- Quantity: 1 
- Total: $19.18 
+Plums
+Unit Price: $19.18
+Quantity: 1
+Total: $19.18
 
-Fresh blueberries 
- Unit Price: $21.01 
- Quantity: 2 
- Total: $42.02 
+Fresh blueberries
+Unit Price: $21.01
+Quantity: 2
+Total: $42.02
 
-Green smoothie 
- Unit Price: $17.68 
- Quantity: 4 
- Total: $70.72 
+Green smoothie
+Unit Price: $17.68
+Quantity: 4
+Total: $70.72
 
-Corn 
- Unit Price: $13.55 
- Quantity: 1 
- Total: $13.55 
+Corn
+Unit Price: $13.55
+Quantity: 1
+Total: $13.55
 
-French fries 
- Unit Price: $18.32 
- Quantity: 2 
- Total: $36.64 
+French fries
+Unit Price: $18.32
+Quantity: 2
+Total: $36.64
 
-Ground beef meat burger 
- Unit Price: $11.73 
- Quantity: 3 
- Total: $35.19 
+Ground beef meat burger
+Unit Price: $11.73
+Quantity: 3
+Total: $35.19
 
-Hazelnut in black ceramic bowl 
- Unit Price: $27.35 
- Quantity: 1 
- Total: $27.35 
+Hazelnut in black ceramic bowl
+Unit Price: $27.35
+Quantity: 1
+Total: $27.35
 
-Cherry 
- Unit Price: $14.35 
- Quantity: 2 
- Total: $28.7 
+Cherry
+Unit Price: $14.35
+Quantity: 2
+Total: $28.7
 
-Homemade bread 
- Unit Price: $17.48 
- Quantity: 5 
- Total: $87.4 
+Homemade bread
+Unit Price: $17.48
+Quantity: 5
+Total: $87.4
 
-Smoothie with chia seeds 
- Unit Price: $25.26 
- Quantity: 2 
- Total: $50.52 
+Smoothie with chia seeds
+Unit Price: $25.26
+Quantity: 2
+Total: $50.52
 
-Corn 
- Unit Price: $13.55 
- Quantity: 10 
- Total: $135.5 
+Corn
+Unit Price: $13.55
+Quantity: 10
+Total: $135.5
 
-Rustic breakfast 
- Unit Price: $21.32 
- Quantity: 2 
- Total: $42.64 
+Rustic breakfast
+Unit Price: $21.32
+Quantity: 2
+Total: $42.64
 
-Sandwich with salad 
- Unit Price: $22.48 
- Quantity: 3 
- Total: $67.44 
+Sandwich with salad
+Unit Price: $22.48
+Quantity: 3
+Total: $67.44
 
-Raw legums 
- Unit Price: $17.11 
- Quantity: 20 
- Total: $342.2 
+Raw legums
+Unit Price: $17.11
+Quantity: 20
+Total: $342.2
 
-Fresh stawberry 
- Unit Price: $28.59 
- Quantity: 4 
- Total: $114.36 
+Fresh stawberry
+Unit Price: $28.59
+Quantity: 4
+Total: $114.36
 
-Pears juice 
- Unit Price: $19.49 
- Quantity: 1 
- Total: $19.49 
+Pears juice
+Unit Price: $19.49
+Quantity: 1
+Total: $19.49
 
-Green smoothie 
- Unit Price: $17.68 
- Quantity: 8 
- Total: $141.44 
+Green smoothie
+Unit Price: $17.68
+Quantity: 8
+Total: $141.44
 
-Cuban sandwiche 
- Unit Price: $18.5 
- Quantity: 9 
- Total: $166.5 
+Cuban sandwiche
+Unit Price: $18.5
+Quantity: 9
+Total: $166.5
 
-Hazelnut in black ceramic bowl 
- Unit Price: $27.35 
- Quantity: 2 
- Total: $54.7 
+Hazelnut in black ceramic bowl
+Unit Price: $27.35
+Quantity: 2
+Total: $54.7
 
-Tomatoes 
- Unit Price: $26.03 
- Quantity: 1 
- Total: $26.03 
+Tomatoes
+Unit Price: $26.03
+Quantity: 1
+Total: $26.03
 
-Plums 
- Unit Price: $19.18 
- Quantity: 2 
- Total: $38.36 
+Plums
+Unit Price: $19.18
+Quantity: 2
+Total: $38.36
 
-Fresh blueberries 
- Unit Price: $21.01 
- Quantity: 3 
- Total: $63.03 
+Fresh blueberries
+Unit Price: $21.01
+Quantity: 3
+Total: $63.03
 
-Green smoothie 
- Unit Price: $17.68 
- Quantity: 5 
- Total: $88.4 
+Green smoothie
+Unit Price: $17.68
+Quantity: 5
+Total: $88.4
 
-Corn 
- Unit Price: $13.55 
- Quantity: 4 
- Total: $54.2 
+Corn
+Unit Price: $13.55
+Quantity: 4
+Total: $54.2
 
 -----------------------
 Total Sales: $2,481.86
 -----------------------
 
-Execution Time: 0.000601 seconds
+Execution Time: 0.000612 seconds

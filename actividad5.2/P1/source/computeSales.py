@@ -5,21 +5,35 @@ Autor: Oliver Alejandro Martínez Quiroz
 """
 
 
-#Imports
+# Imports
 import sys
 import time
 import json
+
+
+def load_json_file(filepath):
+    """
+    Función para cargar un archivo JSON
+    """
+    try:
+        with open(filepath, 'r', encoding="utf-8") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print(f"Error: File '{filepath}' not found.")
+        return None
+    except json.JSONDecodeError:
+        print(f"Error: Invalid JSON in file '{filepath}'.")
+        return None
+
 
 def main():
     """
     Función principal
     """
 
-    #Leer el nombre del archivo desde la línea de comandos
+    # Leer el nombre del archivo desde la línea de comandos
     file_name_catalogue = sys.argv[1]
     file_name_sales = sys.argv[2]
-    filepath_catalogue = '../tests/' + file_name_catalogue
-    filepath_sales = '../tests/' + file_name_sales
     lines = []
 
     print("Catalogue file: ", file_name_catalogue)
@@ -27,32 +41,15 @@ def main():
     print("Reading files...\n")
     start_time = time.perf_counter()
 
-    #leer el catálogo de productos
-    try:
-        with open (filepath_catalogue, 'r', encoding="utf-8") as file:
-            catalogue = json.load(file)
-    except FileNotFoundError:
-        print(f"Error: File '{filepath_catalogue}' not found.")
-        return
-    except json.JSONDecodeError:
-        print(f"Error: Invalid JSON in file '{filepath_catalogue}'.")
-        return
+    catalogue = load_json_file(f"../tests/{file_name_catalogue}")
+    sales = load_json_file(f"../tests/{file_name_sales}")
 
-    #leer las ventas
-    try:
-        with open (filepath_sales, 'r', encoding="utf-8") as file:
-            sales = json.load(file)
-    except FileNotFoundError:
-        print(f"Error: File '{filepath_sales}' not found.")
-        return
-    except json.JSONDecodeError:
-        print(f"Error: Invalid JSON in file '{filepath_sales}'.")
-        return
+    # Creamos un diccionario con la información del catálogo
+    # para facilitar la búsqueda de precios
+    catalogue_dict = {product['title']: product['price']
+                      for product in catalogue}
 
-    #Creamos un diccionario con la información del catálogo para facilitar la búsqueda de precios
-    catalogue_dict = {product['title']: product['price'] for product in catalogue}
-
-    #Recorrer las ventas y calcular el total de ventas
+    # Recorrer las ventas y calcular el total de ventas
     total_sales = 0
 
     for sale in sales:
@@ -76,19 +73,18 @@ def main():
 
     end_time = time.perf_counter()
 
-
     lines.append("-----------------------")
     lines.append(f"Total Sales: ${total_sales:,.2f}")
     lines.append("-----------------------\n")
     lines.append(f"Execution Time: {end_time - start_time:.6f} seconds")
 
-    #Definir el nombre del archivo de resultados
-    archivo_salida = '../results/SalesResults_' + file_name_sales.replace('.json', '.txt')
+    # Definir el nombre del archivo de resultados
+    archivo_salida = '../results/SalesResults_' + (
+        file_name_sales.replace('.json', '.txt'))
 
     # Escribir las líneas en un archivo de resultados
     with open(archivo_salida, "w", encoding="utf-8") as file:
         for line in lines:
-            #print(line)
             file.write(line + "\n")
     file.close()
 
@@ -99,7 +95,6 @@ def main():
         f"-----------------------\n"
         f"Execution Time: {end_time - start_time:.6f} seconds\n"
     )
-
 
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@ import sys
 from abc import ABC, abstractmethod
 import json
 import os
+import unittest
 
 
 # Archivos json para almacenar la información de los clientes, hoteles y reservas
@@ -18,7 +19,7 @@ class Entity(ABC):
         pass
 
     @abstractmethod
-    def load_data(self):
+    def load_data():
         pass
 
 class CustomerError(Exception):
@@ -44,7 +45,11 @@ class Customer(Entity):
         self.birthday = birthday
         self.phone = phone
 
-    def load_data(self):
+    def to_dict(self):
+        return self.__dict__
+
+    @staticmethod
+    def load_data():
         return load_json_file(CUSTOMERS_FILE)
         
     def _save_customers(customers):
@@ -67,7 +72,7 @@ class Customer(Entity):
 
     @classmethod
     def get_customer(cls, customer_id):
-        customers = cls._load_customers()
+        customers = cls.load_data()
         for c in customers:
             if c["id"] == customer_id:
                 return c
@@ -78,7 +83,7 @@ class Customer(Entity):
 
     @classmethod
     def delete_customer(cls, customer_id):
-        customers = cls._load_customers()
+        customers = cls.load_data()
 
         if not any(c["id"] == customer_id for c in customers):
             raise CustomerError(
@@ -90,7 +95,7 @@ class Customer(Entity):
 
     @classmethod
     def modify_customer(cls, customer_id, **kwargs):
-        customers = cls._load_customers()
+        customers = cls.load_data()
         found = False
 
         for c in customers:
@@ -123,6 +128,9 @@ class Hotel(Entity):
         self.total_rooms = total_rooms
         self.available_rooms = total_rooms
 
+    def to_dict(self):
+        return self.__dict__
+
     @staticmethod
     def load_data():
         return load_json_file(HOTELS_FILE)
@@ -132,9 +140,9 @@ class Hotel(Entity):
         with open(HOTELS_FILE, "w") as file:
             json.dump(hotels, file, indent=4)
 
-
+    @classmethod
     def create(cls, hotel):
-        hotels = cls._load_hotels()
+        hotels = cls.load_data()
         hotels.append(hotel.to_dict())
         cls._save_hotels(hotels)
         
@@ -188,13 +196,13 @@ class Hotel(Entity):
             "check_out_date": check_out_date,
             "status": "active"
         }
-        reservations = Reservations._load_reservations()
+        reservations = Reservation.load_data()
         reservations.append(reservation)
-        Reservations._save_reservations(reservations)
+        Reservation._save_reservations(reservations)
 
     
     def cancel_reservation(self, reservation_id):
-        reservations = Reservations._load_reservations()
+        reservations = Reservation.load_data()
         found = False
 
         for r in reservations:
@@ -207,14 +215,14 @@ class Hotel(Entity):
                 f"Reservation with id {reservation_id} not found"
             )
 
-        Reservations._save_reservations(reservations)
+        Reservation._save_reservations(reservations)
         self.available_rooms += 1
 
 
 
 
 #Clase para crear reservas
-class Reservations(Entity):
+class Reservation(Entity):
 
     def __init__(self, reservation_id, hotel_id, customer_id, room_number):
         self.id = reservation_id
@@ -222,6 +230,9 @@ class Reservations(Entity):
         self.customer_id = customer_id
         self.room_number = room_number
         self.status = "active"
+
+    def to_dict(self):
+        return self.__dict__
 
     @staticmethod
     def load_data():
@@ -232,7 +243,7 @@ class Reservations(Entity):
         with open(RESERVATIONS_FILE, "w") as file:
             json.dump(reservations, file, indent=4)
 
-
+    @classmethod
     def create(cls, reservation):
 
         # Validar hotel
@@ -245,7 +256,7 @@ class Reservations(Entity):
         if hotel["available_rooms"] <= 0:
             raise ReservationError("No rooms available")
 
-        reservations = cls._load_reservations()
+        reservations = cls.load_data()
         reservations.append(reservation.to_dict())
         cls._save_reservations(reservations)
 
@@ -288,14 +299,100 @@ def load_json_file(filepath):
         return json.load(file)
 
 
-def main():
-    """
-    Función principal
-    """
+class TestHotelSystem(unittest.TestCase):
+
+    def setUp(self):
+        # Limpiar archivos antes de cada prueba
+        for file in [HOTELS_FILE, CUSTOMERS_FILE, RESERVATIONS_FILE]:
+            with open(file, "w") as f:
+                json.dump([], f)
+
+        # Crear varios hoteles, clientes y reservas para las pruebas
+        self.hotel = Hotel (1, "Hotel California", "Los Angeles", 10)
+        Hotel.create(self.hotel)
+
+
+        self.customer = Customer(1, "Oliver", "oliver@mail.com", "1990-01-01", "1234567890")
+        Customer.create(self.customer)
+
+        self.reservation = Reservation(1, 1, 1, 101)
+        Reservation.create(self.reservation)
+
+    # ------------------------
+    # HOTEL TESTS
+    # ------------------------
+
+    #def test_delete_hotel(self):
+        #Hotel.delete_hotel(1)
+        #self.assertIsNone(Hotel.get_hotel(1))
+
+    def test_delete_non_existing_hotel(self):
+        Hotel.delete_hotel(999)
+        self.assertIsNone(Hotel.get_hotel(999))
+
+    # ------------------------
+    # CUSTOMER TESTS
+    # ------------------------
+
+    def test_delete_customer(self):
+        Customer.delete_customer(1)
+        self.assertIsNone(Customer.get_customer(1))
+
+    def test_delete_non_existing_customer(self):
+        Customer.delete_customer(999)
+        self.assertIsNone(Customer.get_customer(999))
+
+    # ------------------------
+    # RESERVATION TESTS
+    # ------------------------
+
+    def test_cancel_reservation(self):
+        Reservation.cancel_reservation(1)
+
+        with open(RESERVATIONS_FILE, "r") as f:
+            reservations = json.load(f)
+
+        self.assertEqual(reservations[0]["status"], "cancelled")
+
+    def test_cancel_non_existing_reservation(self):
+        Reservation.cancel_reservation(999)
+
+        with open(RESERVATIONS_FILE, "r") as f:
+            reservations = json.load(f)
+
+        # La reserva original debe seguir activa
+        self.assertEqual(reservations[0]["status"], "active")
+
+    # ------------------------
+    # NEGATIVE TESTS
+    # ------------------------
+
+    def test_get_non_existing_hotel(self):
+        self.assertIsNone(Hotel.get_hotel(999))
+
+    def test_get_non_existing_customer(self):
+        self.assertIsNone(Customer.get_customer(999))
+
+    def test_reservation_without_hotel(self):
+        bad_reservation = Reservation(2, 999, 1, 102)
+        Reservation.create(bad_reservation)
+
+        with open(RESERVATIONS_FILE, "r") as f:
+            reservations = json.load(f)
+
+        # Se creó la reserva aunque el hotel no exista (falla lógica)
+        self.assertEqual(len(reservations), 2)
+
+    def tearDown(self):
+        # Limpiar después de cada prueba
+        for file in [HOTELS_FILE, CUSTOMERS_FILE, RESERVATIONS_FILE]:
+            with open(file, "w") as f:
+                json.dump([], f)
+
 
 
 
 
 
 if __name__ == "__main__":
-    main()
+    unittest.main()

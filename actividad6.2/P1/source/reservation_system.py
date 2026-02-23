@@ -1,11 +1,19 @@
 import sys
 from abc import ABC, abstractmethod
-
+import json
+import os
 
 #Creamos los diccionarios para almacenar la informacion de los clientes y las reservas
 customers_dict = {}
 reservations_dict = {}
 hotels_dict = {}
+
+
+# Archivos json para almacenar la información de los clientes, hoteles y reservas
+CUSTOMERS_FILE = "customers.json"
+HOTELS_FILE = "hotels.json"
+RESERVATIONS_FILE = "reservations.json"
+
 
 
 #Clase abstracta para definir la estructura de las clases de clientes, hoteles y reservas
@@ -18,19 +26,41 @@ class Entity(ABC):
     def display_info(self):
         pass
 
+class CustomerError(Exception):
+    pass
 
 #Clase para crear clientes
 class Customers(Entity):
 
-    def create(self, email, name, birthdate, phone):
+    def __init__(self, customer_id, name, email, birthday, phone):
+        self.id = customer_id
+        self.name = name
         self.email = email
+        self.birthday = birthday
+        self.phone = phone
 
-        customers_dict[self.email] = {
-            "name": name,
-            "birthdate": birthdate,
-            "phone": phone
-        }
-        print(f"Customer '{name}' created successfully.")
+    def _load_customers():
+        if not os.path.exists(CUSTOMERS_FILE):
+            return []
+        with open(CUSTOMERS_FILE, "r") as file:
+            return json.load(file)
+        
+    def _save_customers(customers):
+        with open(CUSTOMERS_FILE, "w") as file:
+            json.dump(customers, file, indent=4)
+
+    @classmethod
+    def create(cls, customer):
+        customers = cls._load_customers()
+
+        # Validar que no exista ID duplicado
+        if any(c["id"] == customer.id for c in customers):
+            raise CustomerError(
+                f"Customer with id {customer.id} already exists"
+            )
+
+        customers.append(customer.to_dict())
+        cls._save_customers(customers)
 
     def display_info(self):
         customer = customers_dict.get(self.email)
@@ -42,25 +72,52 @@ class Customers(Entity):
         else:
             print("Customer not found.")
 
-    def modify_customer(self, new_name=None, new_birthdate=None, new_phone=None):
-        customer = customers_dict.get(self.email)
-        if customer:
-            if new_name:
-                customer['name'] = new_name
-            if new_birthdate:
-                customer['birthdate'] = new_birthdate
-            if new_phone:
-                customer['phone'] = new_phone
-            print(f"Customer '{self.email}' modified successfully.")
-        else:
-            print("Customer not found.")
-    
-    def delete(self):
-        if self.email in customers_dict:
-            del customers_dict[self.email]
-            print(f"Customer '{self.email}' deleted successfully.")
-        else:
-            print("Customer not found.")
+    @classmethod
+    def get_customer(cls, customer_id):
+        customers = cls._load_customers()
+        for c in customers:
+            if c["id"] == customer_id:
+                return c
+
+        raise CustomerError(
+            f"Customer with id {customer_id} not found"
+        )
+
+    @classmethod
+    def delete_customer(cls, customer_id):
+        customers = cls._load_customers()
+
+        if not any(c["id"] == customer_id for c in customers):
+            raise CustomerError(
+                f"Customer with id {customer_id} not found"
+            )
+
+        customers = [c for c in customers if c["id"] != customer_id]
+        cls._save_customers(customers)
+
+    @classmethod
+    def modify_customer(cls, customer_id, **kwargs):
+        customers = cls._load_customers()
+        found = False
+
+        for c in customers:
+            if c["id"] == customer_id:
+                c.update(kwargs)
+                found = True
+
+        if not found:
+            raise CustomerError(
+                f"Customer with id {customer_id} not found"
+            )
+
+        cls._save_customers(customers)
+
+
+
+
+
+
+
 
 
 #Clase para crear hoteles
@@ -167,13 +224,30 @@ class Reservations(Entity):
 
 
 
-    
+
+# Funcion para leer un archivo json
+def load_json_file(filepath):
+    """
+    Función para cargar un archivo JSON
+    """
+    try:
+        with open(filepath, 'r', encoding="utf-8") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print(f"Error: File '{filepath}' not found.")
+        return None
+    except json.JSONDecodeError:
+        print(f"Error: Invalid JSON in file '{filepath}'.")
+        return None
 
 
 def main():
     """
     Función principal
     """
+
+
+
 
 
 if __name__ == "__main__":
